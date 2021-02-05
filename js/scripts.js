@@ -1,13 +1,13 @@
 let pokemonList = [{
-    name: 'Pikachu',
+    name: ['Pikachu'],
     hieght: 1,
-    type: 'electric'
+    type: ['electric']
 }, {
-    name: 'Blastois',
+    name: ['Blastois'],
     hieght: 2,
-    type: 'water'
+    type: ['water']
 }, {
-    name: 'Charizard',
+    name: ['Charizard'],
     hieght: 6,
     type: ['fire', 'flying']
 }];

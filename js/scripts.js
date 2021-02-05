@@ -1,8 +1,8 @@
 let pokemonList = [];
 
-let pokemon1 = {name: "Pikachu", hieght: "1m", type: "electric"
+let pokemon1 = {name: "Pikachu", hieght: 1, type: "electric"
 };
-Let Pokemon2 = {name: "Blastois", hieght: "1.6m", type: "water"};
-Let pokemon3 = {name="Charizard", hieght: "1.7m", type: ["fire", "flying"]};
+Let Pokemon2 = {name: "Blastois", hieght: 2, type: "water"};
+Let pokemon3 = {name: "Charizard", hieght: 6, type: ["fire", "flying"]};
 
 

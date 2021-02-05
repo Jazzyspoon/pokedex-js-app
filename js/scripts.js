@@ -3,7 +3,7 @@
 alert('Hello world');
 
 let favoriteFood = "sushi";
-document.write("favoriteFood") 
+document.write(favoriteFood) 
 
 
 

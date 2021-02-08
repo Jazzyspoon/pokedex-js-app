@@ -23,8 +23,10 @@ for (let i=0; i < pokemonList.length; i++) {
     let grid = document.getElementById('grid-wrapper');
 
  /*attempting to write that's a big pokemon*/   
- for (let height = 6.0; height.length > 6.0; height++)  {
-        document.write(pokemonList[i].name + ' hieght: ' + pokemonList[i].height + ' ' + 'thats a big pokemon!'); 
+ for (let height < 6.0; height.length < 6.0; height++)  {
+        document.write(pokemonList[i].name + ' hieght: ' + pokemonList[i].height + ' ' + 'thats a tiny pokemon!'); 
+    } else if (let height => 6.1; height > 6.0; height++) {
+        document.write(pokemonList[i].name + ' hieght: ' + pokemonList[i].height + ' ' + 'thats a big pokemon!');  
     }
 
 

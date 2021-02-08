@@ -1,8 +1,8 @@
 
 body {
-	font-family: 'Rubik Mono One', sans-serif;
-	font-weight: 400;
-	font-size: 12px;
+	font-family: 'Oxygen', sans-serif;
+	font-weight: 200;
+	font-size: 10px;
 	line-height: 1.6;
 	background-color: var(--primary-color);
 }
@@ -21,18 +21,18 @@ body {
 }
 /*adding a highlighted line for Charizard*/
  .special_pokemon {
-    background-color: var(--secondary-color); 
-     }   
+    background-color: var(--secondary-color);
+}   
 
 h1 {
     font-size: 26px;
-    font-weight: 700;
+    font-weight: 400;
     text-align: center;
 }
   
 h2 {
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 400;
 }
   
 h3 {
@@ -45,22 +45,21 @@ h4 {
     font-weight: 700;
 }
 
-
-
 .grid {
-    display: inline-flex;
-	grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+	grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 	grid-gap: 20px;
 	padding: 20px;
 	margin: 20px;
 	text-align: left;
 }
 
-.grid__item   {
-    background-color: var(--secondary-color);
+.grid_item   {
+    background-color: var(--primary-color);
 	box-shadow: var(--box-shadow-lightest);  
 }
+
 
 @media screen and (max-width: 800px) {
     .column {

@@ -19,12 +19,10 @@ body {
     --box-shadow-contact: 10px 10px 40px -14px #000; 
     --box-shadow-dark: 0 0 40px -10px #000;
 }
-/*adding a highlighted line*/
+/*adding a highlighted line for Charizard*/
  .special_pokemon {
     background-color: var(--secondary-color); 
-    display: flex;
-    float: left;
- }   
+     }   
 
 h1 {
     font-size: 26px;
@@ -47,12 +45,21 @@ h4 {
     font-weight: 700;
 }
 
-.center {
-    text-align: center;
+
+
+.grid {
+    display: inline-grid;
+	grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 20px;
+	padding: 20px;
+	margin: 20px;
+	text-align: left;
 }
 
-.container {
-    display: grid | inline-grid;
+.grid__item   {
+    background-color: var(--secondary-color);
+	box-shadow: var(--box-shadow-lightest);  
 }
 
 @media screen and (max-width: 800px) {

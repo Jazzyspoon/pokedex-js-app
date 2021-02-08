@@ -16,17 +16,18 @@ let pokemonList = [
     }
 ];
 
-/*writing out the names and heights. I needed a lot of direction on this. 
-Especially helpful knowing how to embed html into document, as I was struggling with this as well.  */
+/*writing out the names and heights. I needed a good bit of direction on this part. 
+Especially helpful knowing how to embed html into document, as I was struggling with this, as well.  */
 for (let i = 0; i < pokemonList.length; i++) {
     if (pokemonList[i].height > 6) {
         document.write(
             pokemonList[i].name +
             " " +
             "<p>" +
-            "Height: " +
+            "(Height: " +
             pokemonList[i].height +
-            "(Wow that's big!)" +
+            ")" +
+            " -Wow that's big!" +
             "</p>"
         );
     } else {
@@ -34,8 +35,9 @@ for (let i = 0; i < pokemonList.length; i++) {
             pokemonList[i].name +
             " " +
             "<p>" +
-            "Height: " +
+            "(Height: " +
             pokemonList[i].height +
+            ")" +
             "</p>" +
             "<br/>"
         );

@@ -12,9 +12,9 @@ let pokemonRepository = (function () {
       type: ["water"],
     },
     {
-      name: "<p class='special_pokemon'>Charizard</p>",
+      name: "Charizard",
       height: 6.1,
-      type: ["fire", "flying"],
+      type: ["fire", " flying"],
     },
   ];
 
@@ -33,20 +33,22 @@ let pokemonRepository = (function () {
 })();
 
 //foreach statement instead of for statement
-pokemonRepository.getAll().forEach(function(pokemon) {
+pokemonRepository.getAll().forEach(function (pokemon) {
   document.write(
-    pokemon.name +
+    "<p class='grid_item'>" +
+      pokemon.name +
       " " +
       "<p>" +
       "Height: " +
       pokemon.height +
       "</br>" +
-      "Pokemon Type: " +
+      "Type: " +
       pokemon.type +
-      "</br>" +
+      "</p>" +
       "</p>"
   );
 });
+
 /*attempting to make these grid items*/
 //let dataArray = pokemonList;
 //let numColumns = 3;

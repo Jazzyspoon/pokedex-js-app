@@ -1,51 +1,53 @@
-let pokemonList = [
+//IIFE instantiated
+let pokemonRepository = (function () {
+  let pokemonList = [
     {
-        name: "Pikachu",
-        height: 1.2,
-        type: ["electric"]
+      name: "Pikachu",
+      height: 1.2,
+      type: ["electric"],
     },
     {
-        name: "Blastoise",
-        height: 2.0,
-        type: ["water"]
+      name: "Blastoise",
+      height: 2.0,
+      type: ["water"],
     },
     {
-        name: "<p class='special_pokemon'>Charizard</p>",
-        height: 6.1,
-        type: ["fire", "flying"]
-    }
-];
+      name: "<p class='special_pokemon'>Charizard</p>",
+      height: 6.1,
+      type: ["fire", "flying"],
+    },
+  ];
 
-/*writing out the names and heights. I needed a good bit of direction on this part. 
-Especially helpful knowing how to embed html into document, as I was struggling with this, as well.  */
-for (let i = 0; i < pokemonList.length; i++) {
-    if (pokemonList[i].height > 6) {
-        document.write(
-            pokemonList[i].name +
-            " " +
-            "<p>" +
-            "(Height: " +
-            pokemonList[i].height +
-            ")" +
-            " -Wow that's big!" +
-            "</p>"
-        );
-    } else {
-        document.write(
-            pokemonList[i].name +
-            " " +
-            "<p>" +
-            "(Height: " +
-            pokemonList[i].height +
-            ")" +
-            "</p>" +
-            "<br/>"
-        );
-    }
-}
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
 
+  function getAll() {
+    return pokemonList;
+  }
+
+  return {
+    add: add,
+    getAll: getAll,
+  };
+})();
+
+//foreach statement instead of for statement
+pokemonRepository.getAll().forEach(function(pokemon) {
+  document.write(
+    pokemon.name +
+      " " +
+      "<p>" +
+      "Height: " +
+      pokemon.height +
+      "</br>" +
+      "Pokemon Type: " +
+      pokemon.type +
+      "</br>" +
+      "</p>"
+  );
+});
 /*attempting to make these grid items*/
-let dataArray = pokemonList;
-let numColumns = 3;
-let grid = document.getElementById('grid');
-
+//let dataArray = pokemonList;
+//let numColumns = 3;
+//let grid = document.getElementById('grid');

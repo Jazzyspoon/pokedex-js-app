@@ -34,13 +34,13 @@ function addListItem(pokemon) {
   listPokemon.appendChild(button);
   pokemonButtons.appendChild(listPokemon);
   //adding event to list pokemon name in console when clicked
-  button.addEventListener('click', function(showDetails) {
-  console.log(pokemon.name);
+  button.addEventListener("click", function () {
+    showDetails(pokemon);
   })};
 
 //function code for a later task
 function showDetails(pokemon){
-    console.log()};
+    console.log(pokemon.name)};
 
 return {
    add: add,

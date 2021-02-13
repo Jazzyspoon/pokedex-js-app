@@ -25,31 +25,40 @@ let pokemonRepository = (function () {
   function getAll() {
     return pokemonList;
   }
+function addListItem(pokemon) {
+  let pokemonButtons = document.querySelector('.pokemon-list');
+  let listPokemon = document.createElement('li');
+  let button = document.createElement('button');
+  button.innerText=  pokemon.name; 
+  button.classList.add('buttons');
+  listPokemon.appendChild(button);
+  pokemonButtons.appendChild(listPokemon);
+  //adding event to list pokemon name in console when clicked
+  button.addEventListener('click', function(showDetails) {
+  console.log(pokemon.name);
+  })};
 
-  return {
-    add: add,
+//function code for a later task
+function showDetails(pokemon){
+    console.log()};
+
+return {
+   add: add,
     getAll: getAll,
+    addListItem: addListItem
   };
 })();
 
-//foreach statement instead of for statement
-pokemonRepository.getAll().forEach(function (pokemon) {
-  document.write(
-    "<p class='grid_item'>" +
-      pokemon.name +
-      " " +
-      "<p>" +
-      "Height: " +
-      pokemon.height +
-      "</br>" +
-      "Type: " +
-      pokemon.type +
-      "</p>" +
-      "</p>"
-  );
+
+pokemonRepository.getAll().forEach(function (pokemon) { 
+  pokemonRepository.addListItem(pokemon);
 });
 
-/*attempting to make these grid items*/
-//let dataArray = pokemonList;
-//let numColumns = 3;
-//let grid = document.getElementById('grid');
+
+
+
+
+
+
+
+

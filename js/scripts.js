@@ -1,5 +1,6 @@
 //IIFE instantiated
 let pokemonRepository = (function () {
+  let modalContainer = document.querySelector('#modal.container');
   let pokemonList = [];
      let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
      
@@ -35,7 +36,7 @@ let pokemonRepository = (function () {
             name: item.name,
             detailsUrl: item.url};
             add(pokemon);
-            // console.log(pokemon);
+            console.log(pokemon);
         });
       }).catch(function (e) {
         console.error(e);
@@ -58,25 +59,91 @@ let pokemonRepository = (function () {
 
 function showDetails(item){
   pokemonRepository.loadDetails(item).then(function () {
-    console.log(item);
+    document.querySelector(item);
   });
 }
+  
+function showModal(title, text, image) {
+  modalContainer.innerHTML = '';
+  let modal = document.createElement('div');
+  modal.classList.add('modal');
 
-return {
-  add: add,
-  getAll: getAll,
-  addListItem: addListItem,
-  loadList: loadList,
-  loadDetails: loadDetails,
-  showDetails: showDetails
-  };
+  let closeButtonElement = document.querySelector('button');
+  closeButtonElement.classList.add('modal-close');
+  closeButtonElement.innerText = 'Close';
+  closeButtonElement.addEventListener('click', hideModal);
+
+  let titleElement = document.createElement('h1');
+  titleElement.innerText =  title;
+
+  let pokemonHeight = document.createElement('p');
+  pokemonHeight.innerText = text;
+
+  let pokemonPic = document.imageUrl('h2');
+  pokemonPic.innerHTML = '#' && image;
+
+modal.appendChild(closeButtonElement);
+  modal.appendChild(pokemonName);
+  modal.appendChild(pokemonHeight);
+  modal.appendChild(pokemonPic);
+  modalContainer.appendChild(modal);
+
+  modalContainer.classList.add('is-visible')
+  }
+
+  function hideModal() {
+    modalContainer.classList.remove('is-visible')
+  }
+  
+  function showDialog(title, text)  {
+    
+  }
+
+  document.querySelector('#show-modal').addEventListener('click', () => {
+    showModal(details);
+  });
+  
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+      hideModal();  
+    }
+  });
+  
+  modalContainer.addEventListener('click', (e) => {
+    let target = e.target;
+    if (target === modalContainer) {
+      hideModal();
+    }
+  });
+
+  return {
+    add: add,
+    getAll: getAll,
+    addListItem: addListItem,
+    loadList: loadList,
+    loadDetails: loadDetails,
+    showDetails: showDetails
+    };
 })();
 
-pokemonRepository.loadList().then(function ()  {
-  pokemonRepository.getAll().forEach(function (pokemon) { 
-   pokemonRepository.addListItem(pokemon);
-  });
-});
+
+  
+// })();
+// document.querySelector('#show-modal').addEventListener('click', () => {
+//   showModal(showDetails);
+// });
+// let modalContainer = document.querySelector('#modal.container');
+
+
+
+
+
+
+// pokemonRepository.loadList().then(function ()  {
+//   pokemonRepository.getAll().forEach(function (pokemon) { 
+//    pokemonRepository.addListItem(pokemon);
+//   });
+// });
 
 
 

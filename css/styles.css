@@ -96,10 +96,11 @@ header {
   position: fixed;
   padding: 20px;
   box-sizing: border-box;
+  border-radius: 10px;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 300px;
+  height: 200px;
   background:rebeccapurple;
   z-index: 999;
   overflow: auto;
@@ -111,9 +112,10 @@ header {
   margin: auto;
   display: inline-block;
   box-sizing: border-box;
-  background: rgb(233, 255, 189);
+  background: var(--secondary-color);
   padding: 15px;
   width: 100%;
+  height: 100%;
   max-width: 700px;
   text-align: left;
   border-radius: 5px;

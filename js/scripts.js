@@ -20,8 +20,8 @@ let pokemonRepository = (function () {
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
   //adding event to list pokemon name in Modal function when clicked?
-    button.addEventListener("click", function(pokemonModal)  {
-    showDetails(pokemonModal);
+    button.addEventListener("click", function()  {
+    showDetails(pokemon);
   });
 }
  //loading from API
@@ -35,7 +35,7 @@ let pokemonRepository = (function () {
             name: item.name,
             detailsUrl: item.url};
             add(pokemon);
-            // console.log(pokemon);
+            console.log(pokemon);
         });
       }).catch(function (e) {
         console.error(e);
@@ -86,10 +86,10 @@ let pokemonModal = (function(){
     closeButtonElement.addEventListener('click', hideModal);
 //defining the title element in the modal
   let titleElement = document.createElement('h1');
-    titleElement.innerText = pokemonRepository.pokemon;
+    titleElement.innerText = pokemon;
 //listing the content in the modal  
   let contentElement = document.createElement('p');
-    contentElement.innerText = pokemonRepository.details;
+    contentElement.innerText = details;
   
   //load modal with requested information from pokemonRepository
   modal.appendChild(closeButtonElement);
@@ -118,7 +118,7 @@ document.querySelector('button').addEventListener('click', () => {
 
 })();
 
-//call on all items from repository
+//call on all items from repository to show on DOM
 pokemonRepository.loadList().then(function ()  {
   pokemonRepository.getAll().forEach(function (pokemon) { 
    pokemonRepository.addListItem(pokemon); {

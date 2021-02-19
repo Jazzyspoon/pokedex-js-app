@@ -129,15 +129,11 @@ header {
   box-shadow: 10;
  }
 
-.modal h1 {
-  margin-top: 0;
-}
-
 .modal h2 {
   margin-top: 0;
 }
 
-.modal h3 {
+.modal h1 {
   margin-top: 0;
 }
 

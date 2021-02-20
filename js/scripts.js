@@ -53,19 +53,21 @@ let pokemonRepository = (function () {
   //loading specific details from API url
   function loadDetails(item) {
     let url = item.detailsUrl;
-    return fetch(url)
-      .then(function (response) {
-        return response.json();
-         })
-  //add details
+    return (
+      fetch(url)
+        .then(function (response) {
+          return response.json();
+        })
+        //add details
         .then(function (details) {
-        item.imageUrl = details.sprites.front_default;
-        item.height = details.height;
-        item.types = details.types;
-      })
-      .catch(function (e) {
-        console.error(e);
-      });
+          item.imageUrl = details.sprites.front_default;
+          item.height = details.height;
+          item.types = details.types;
+        })
+        .catch(function (e) {
+          console.error(e);
+        })
+    );
   }
 
   function showDetails(item) {
@@ -73,7 +75,7 @@ let pokemonRepository = (function () {
       showModal(item);
     });
   }
-//modal creation
+  //modal creation
   let modalContainer = document.querySelector("#modal-container");
   function showModal(pokemon) {
     modalContainer.innerHTML = "";

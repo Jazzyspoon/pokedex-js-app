@@ -8,7 +8,7 @@ body {
 
 :root {
   --primary-color: #f0ffff;
-  --secondary-color:  #e4f500;
+  --secondary-color: #e4f500;
   --dark-grey: #2b2b2b;
   --black: black;
   --white: #ffffff;
@@ -80,7 +80,7 @@ header {
   height: 60px;
   font-weight: 600;
   font-size: 18px;
-  text-align:left;
+  text-align: left;
   position: relative;
   padding: 15px;
   top: 0;
@@ -92,7 +92,7 @@ header {
   border-width: 5px;
 }
 
-#modal-container  {
+#modal-container {
   position: fixed;
   padding: 10px;
   box-sizing: border-box;
@@ -103,7 +103,7 @@ header {
   height: 300px;
   margin-left: -150px;
   margin-top: -150px;
-  background:rebeccapurple;
+  background: rebeccapurple;
   z-index: 999;
   overflow: auto;
   display: grid;
@@ -131,7 +131,7 @@ header {
   color: black;
   text-decoration: underline;
   box-shadow: 10;
- }
+}
 
 .modal h1 {
   margin-top: 33px;
@@ -156,7 +156,7 @@ header {
 
 #modal-container.is-visible {
   display: block;
- }
+}
 
 @media screen and (max-width: 800px) {
   .column {

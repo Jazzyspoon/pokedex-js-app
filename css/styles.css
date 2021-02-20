@@ -99,8 +99,8 @@ header {
   border-radius: 10px;
   top: 50%;
   left: 50%;
-  width: 300px;
-  height: 225px;
+  width: 250px;
+  height: 300px;
   margin-left: -150px;
   margin-top: -150px;
   background:rebeccapurple;
@@ -134,6 +134,10 @@ header {
  }
 
 .modal h1 {
+  margin-top: 33px;
+  font-size: 34px;
+}
+.modal h2 {
   margin-top: 0;
 }
 

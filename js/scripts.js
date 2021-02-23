@@ -1,7 +1,7 @@
 //IIFE instantiated
 let pokemonRepository = (function () {
   let pokemonList = [];
-  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=25";
+  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 
   //add pokemon from pokemonList
   function add(pokemon) {
@@ -62,6 +62,7 @@ let pokemonRepository = (function () {
         .then(function (details) {
           item.imageUrl = details.sprites.front_default;
           item.height = details.height;
+          item.abilities = details.abilities;
           item.types = details.types;
         })
         .catch(function (e) {
@@ -86,15 +87,29 @@ let pokemonRepository = (function () {
     closeButtonElement.classList.add("modal-close");
     closeButtonElement.innerText = "Close";
     closeButtonElement.addEventListener("click", hideModal);
+    
     //defining the title element in the modal
     let titleElement = document.createElement("h1");
     titleElement.innerText = pokemon.name;
+
     //listing the content in the modal
     let contentElement = document.createElement("p");
     contentElement.innerText = "Height: " + pokemon.height;
-    //listing the types of pokemon
-    // let typesElement = document.createElement('h2');
-    // typesElement.innerText = pokemon.types;
+
+    //run through abilities array
+    let abilityElement = document.createElement("p");
+    for (let i = 1; i < pokemon.abilities.length; i++) {
+      abilityList = pokemon.abilities[i].ability.name;
+    }
+    abilityElement.innerText = 'Abilities: ' + abilityList;
+
+    //listing the types array
+    let typesElement = document.createElement("p");
+    for (let i = 0; i < pokemon.types.length; i++) {
+      typesList = pokemon.types[i].type.name;
+    }
+    typesElement.innerText = 'Type: ' + typesList;
+
     //loading the image from the API
     let imageElement = document.createElement("img");
     imageElement.src = pokemon.imageUrl;
@@ -104,14 +119,15 @@ let pokemonRepository = (function () {
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
     modal.appendChild(contentElement);
-    // modal.appendChild(typesElement);
+    modal.append(abilityElement);
+    modal.append(typesElement);
     modal.appendChild(imageElement);
     modalContainer.appendChild(modal);
     modalContainer.classList.add("is-visible");
   }
 
   let dialogPromiseReject;
-//hide modal function
+  //hide modal function
   function hideModal() {
     modalContainer.classList.remove("is-visible");
 

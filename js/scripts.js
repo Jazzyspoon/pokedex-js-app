@@ -110,6 +110,8 @@ let pokemonRepository = (function () {
     }
     typesElement.innerText = 'Type: ' + typesList;
 
+    
+
     //loading the image from the API
     let imageElement = document.createElement("img");
     imageElement.src = pokemon.imageUrl;

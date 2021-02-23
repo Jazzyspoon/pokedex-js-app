@@ -4,6 +4,7 @@ body {
   font-size: 20px;
   line-height: 1.6;
   background-color: var(--primary-color);
+  box-sizing: border-box;
 }
 
 :root {
@@ -76,23 +77,31 @@ header {
 
 .modal {
   margin: auto;
-  display: inline-block;
-  box-sizing: border-box;
-  background-color:var(--secondary-color);;
+  display: table;
+  background-color:var(--secondary-color);
   padding: 20px;
   width: auto;
-  text-align: left;
+  height: auto;
   border-radius: 15px;
   border: 15px solid rebeccapurple;
+  box-shadow: var(--box-shadow-dark) ;
+}
+.modalcenter {
+  display: table-cell;
+  vertical-align: middle;
+
 }
 
 .modal-close {
   float: right;
+  font-size: 16px;
   -webkit-appearance: none;
+  padding: 4px;
   border: 0;
-  background: none;
-  color: none;
+  background: rebeccapurple;
+  color: lightgoldenrodyellow;
   text-decoration: underline;
+  border-radius: 10px;
 }
 
 .modal h1 {
@@ -107,7 +116,6 @@ header {
   font-weight: 700;
   text-align: center;
 }
-
 
 .modal p {
   margin-bottom: 0;

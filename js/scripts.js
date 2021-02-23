@@ -11,6 +11,7 @@ let pokemonRepository = (function () {
       console.log("pokemon is not correct");
     }
   }
+
   //get all requested info from pokemonList
   function getAll() {
     return pokemonList;
@@ -50,6 +51,7 @@ let pokemonRepository = (function () {
         console.error(e);
       });
   }
+
   //loading specific details from API url
   function loadDetails(item) {
     let url = item.detailsUrl;
@@ -62,8 +64,10 @@ let pokemonRepository = (function () {
         .then(function (details) {
           item.imageUrl = details.sprites.front_default;
           item.height = details.height;
+          item.weight = details.weight;
           item.abilities = details.abilities;
           item.types = details.types;
+          item.moves = details.moves;
         })
         .catch(function (e) {
           console.error(e);
@@ -87,30 +91,35 @@ let pokemonRepository = (function () {
     closeButtonElement.classList.add("modal-close");
     closeButtonElement.innerText = "Close";
     closeButtonElement.addEventListener("click", hideModal);
-    
+
     //defining the title element in the modal
     let titleElement = document.createElement("h1");
     titleElement.innerText = pokemon.name;
 
     //listing the content in the modal
-    let contentElement = document.createElement("p");
-    contentElement.innerText = "Height: " + pokemon.height;
-
+    let heightElement = document.createElement("p");
+    heightElement.innerText = "Height: " + pokemon.height;
+    let weightElement = document.createElement("p");
+    weightElement.innerText = "Weight: " + pokemon.weight;
     //run through abilities array
     let abilityElement = document.createElement("p");
     for (let i = 1; i < pokemon.abilities.length; i++) {
       abilityList = pokemon.abilities[i].ability.name;
     }
-    abilityElement.innerText = 'Abilities: ' + abilityList;
+    abilityElement.innerText = "Abilities: " + abilityList;
 
     //listing the types array
     let typesElement = document.createElement("p");
     for (let i = 0; i < pokemon.types.length; i++) {
       typesList = pokemon.types[i].type.name;
     }
-    typesElement.innerText = 'Type: ' + typesList;
+    typesElement.innerText = "Type: " + typesList;
 
-    
+    let movesElement = document.createElement("p");
+    for (let i = 0; i < pokemon.types.length; i++) {
+      movesList = pokemon.moves[i].move.name;
+    }
+    movesElement.innerText = "Move: " + movesList;
 
     //loading the image from the API
     let imageElement = document.createElement("img");
@@ -120,9 +129,11 @@ let pokemonRepository = (function () {
     //load modal with requested information from pokemonRepository
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
-    modal.appendChild(contentElement);
+    modal.appendChild(heightElement);
+    modal.appendChild(weightElement);
     modal.append(abilityElement);
     modal.append(typesElement);
+    modal.append(movesElement);
     modal.appendChild(imageElement);
     modalContainer.appendChild(modal);
     modalContainer.classList.add("is-visible");

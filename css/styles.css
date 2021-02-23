@@ -85,7 +85,7 @@ header {
   border: 0;
   background: rebeccapurple;
   color: #84ffef;
-  text-decoration: underline;
+  text-decoration: none;
   border-radius: 10px;
 }
 
@@ -94,7 +94,9 @@ header {
   font-size: 30px;
   font-weight: 700;
   text-align: center;
+  text-decoration: underline;
 }
+
 .modal h2 {
   margin-top: 0;
   font-size: 18px;

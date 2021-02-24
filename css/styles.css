@@ -1,9 +1,8 @@
 body {
   font-family: "Oxygen", sans-serif;
-  line-height: 1.6;
   background-color: var(--primary-color);
   background: #a8ad59;
-}
+ }
 
 :root {
   --primary-color: #f0ffff;
@@ -19,29 +18,20 @@ body {
 }
 
 .header {
-  
   width: 100%;
-  height: auto;
-  padding: 15px;
   background: #f0ff21;
   box-shadow: 0px 2px 4px rgba(34, 40, 46, 0.75);
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
-  border-width: 5px;
-  text-align: center;
 }
 
 .buttons {
   width: 100%;
-  height: 60px;
-  font-weight: 600;
-  font-size: 18px;
-  text-align: left;
+  height: 50px;
+  font-weight: 700;
+  font-size: 20px;
   text-transform: capitalize;
   position: relative;
-  padding: 15px;
-  top: 0;
-  left: 0;
   z-index: 0;
   background: #84ffef;
   box-shadow: 0px 2px 4px rgba(34, 40, 46, 0.75);
@@ -49,123 +39,29 @@ body {
   border-width: 5px;
 }
 
-#modal-container {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: none;
-  z-index: 999;
-  overflow: auto;
-  text-align: center;
-  }
-
-.modal {
-  position: relative;
-  margin: auto;
-  display: table;
-  background-color: whitesmoke;
-  padding: 20px;
-  margin-top: 150px;
-  width: auto;
-  height: auto;
-  border-radius: 15px;
-  border: 6px solid rebeccapurple;
-  box-shadow: var(--box-shadow-dark) ;
-}
-
-.modal-close {
-  float: right;
-  font-weight: 700;
-  background-color: whitesmoke;
-  -webkit-appearance: none;
-  padding: 1px;
-  
-  border-color: rebeccapurple;
-  border-width: 1px;
-  
-  text-decoration: none;
-  border-radius: 6px;
-}
-
-.modal h1 {
-  margin-top: 33px;
-  font-size: 34px;
-  font-weight: 700;
-  text-align: center;
-  text-decoration: underline;
+.modal_character {
   text-transform: capitalize;
-}
-
-.modal h3 {
-  margin-top: 0;
-  font-size: 18px;
-  font-weight: 700;
   text-align: center;
-}
-
-.modal h2 {
-  margin-top: 0;
-  font-size: 18px;
   font-weight: 700;
-  text-align: center;
+  border-radius: 15px;
 }
 
-.modal p {
-  margin-bottom: 0;
-  font-size: 18px;
-  font-weight: 700;
-  text-align: center;
-}
-
-.modal img {
-  margin-bottom: 0;
-  
-}
-
-#modal-container {
-  display: none;
-}
-
-#modal-container.is-visible {
-  display: block;
-  
-}
 .dex-logo {
   flex-shrink: 100%;
   height: 70px;
 }
 
+#searchbar{ 
+  padding:15px; 
+  border-radius: 10px; 
+} 
 
-/* @media screen and (max-width: 800px) {
-  .column {
-    flex: 50%;
-    max-width: 50%;
-  }
-}
+input[type=text] { 
+   width: 70%; 
+   -webkit-transition: width 0.15s ease-in-out; 
+   transition: width 0.15s ease-in-out; 
+} 
 
-
-
-@media all and (max-width: 500px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media all and (min-width: 500px) and (max-width: 750px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media all and (max-width: 750px) {
-  .grid {
-    grid-template-columns: 1fr;
-    grid-gap: 10px;
-  }
-  .grid__item:last-child {
-    grid-column: auto / auto;
-    grid-row: auto / auto;
-  }
-} */
+.buttons{ 
+display: list-item;     
+}  

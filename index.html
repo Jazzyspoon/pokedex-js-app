@@ -23,7 +23,7 @@
   </head>
 
   <body>
-    <nav class="navbar fixed-top navbar-light header" style="background-color: #f0ff21;">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light header" style="background-color: #e8f715;">
       <a class="navbar-brand">
         <img src="img/pokedex.png" class="dex-logo" alt="PokeDex logo" />
       </a>
@@ -39,28 +39,72 @@
             <a class="nav-link" href="https://www.pokemon.com/us/" about="blank">Pokemon.com (external site)</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="https://watch.pokemon.com/en-us/#/player?id=e550d4339a1f4f32bbff97a176a99f7e" tabindex="-1" aria-disabled="true">Watch a Pokemon Episode</a>
-          </li>
+            <form class="form-inline">
+              <input id="searchbar" type="text" class="form-control mr-sm-2" name="search" placeholder="Search Pokemon" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </ul>
       </div>
     </nav>
-      
-    <div class="container-fluid" >
-      <div class="row">
 
-        <div class="col pokemon-list">
+    <div class="container">
+    <div class="row align-items-end ">
+      <div class="col">
+        
+      </div>
+      </div>
+      <div class="row align-items-end ">
+        <div class="col">
+          
         </div>
-        <div id="modal-container"></div>
+        </div>
+        <div class="row align-items-end ">
+          <div class="col">
+            
+          </div>
+          </div>
+          <div class="row align-items-end ">
+            <div class="col">
+              
+            </div>
+            </div>
+            <div class="row align-items-end ">
+              <div class="col">
+                
+              </div>
+              </div>
+  </div>
+<br>
+<br>
+<br>
+<br>
+
+
+<!-- buttons for pokemon to enact modal -->
+    <button type="button" class="btn btn-primary btn-lg btn-block pokemon-list" data-toggle="modal" data-target="#exampleModal">
+      
+    </button> 
+<!--modal-->
+    <div class="modal fade modal-sm modal_character" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-target=".bd-example-modal-sm" >
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header modalcenter">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body modalcenter">
+        ...
+      </div>
+      <div class="modal-footer modalcenter">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
       </div>
     </div>
-  <footer class="container">
-    <div class="row">
-      <div class="col">Pokemon App by Jason Pottorff</div> 
-      <div class="col"> Contact: <a href='jason.pottorff.code@gmail.com' about='blank'>Email Me</a></div> 
-    </div>
-
+  </div>
+</div>
     
-  </footer>
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="

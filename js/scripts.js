@@ -87,11 +87,9 @@ let pokemonRepository = (function () {
     let modalBody = $(".modal-body");
     let modalTitle = $(".modal-title");
     let modalHeader = $(".modal-header");
-    
+
     modalTitle.empty();
     modalBody.empty();
-
-
 
     //defining the name element in the modal
     let titleElement = document.createElement("h1");
@@ -137,22 +135,21 @@ let pokemonRepository = (function () {
     modalBody.append(imageElement);
   }
 
-//enabling search function for navbar
+  //enabling search function for navbar
 
-function searchpokemon() { 
-  let input = document.getElementById("#searchbar").value 
-  input=input.toLowerCase(); 
-  let x = document.getElementsByClassName("li"); 
-    
-  for (i = 0; i < x.length; i++) {  
-      if (!x[i].innerHTML.toLowerCase().includes(input)) { 
-          x[i].style.display="none"; 
-      } 
-      else { 
-          return showModal(pokemon);                  
-      } 
-  } 
-} 
+  function searchpokemon() {
+    let input = document.getElementById("#searchbar").value;
+    input = input.toLowerCase();
+    let x = document.getElementsByClassName("li");
+
+    for (i = 0; i < x.length; i++) {
+      if (!x[i].innerHTML.toLowerCase().includes(input)) {
+        x[i].style.display = "none";
+      } else {
+        return showModal(pokemon);
+      }
+    }
+  }
 
   //return everything asked for
   return {
@@ -164,7 +161,6 @@ function searchpokemon() {
     showDetails: showDetails,
   };
 })();
-
 
 //call on all items from repository to show on DOM
 pokemonRepository.loadList().then(function () {

@@ -1,6 +1,6 @@
 //IIFE instantiated
 let pokemonRepository = (function () {
-  let searchInput = document.querySelector('.search')
+  let searchInput = document.querySelector('.search');
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 
@@ -114,13 +114,12 @@ let pokemonRepository = (function () {
       typesList = pokemon.types[i].type.name;
     }
     typesElement.innerText = "Type: " + typesList;
-
+//loading moves button
     let movesElement = document.createElement("p");
     for (let i = 0; i < pokemon.types.length; i++) {
       movesList = pokemon.moves[i].move.name;
     }
     movesElement.innerText = "Move: " + movesList;
-
     //loading the image from the API
     let imageElement = document.createElement("img");
     imageElement.src = pokemon.imageUrl;
@@ -135,14 +134,12 @@ let pokemonRepository = (function () {
     modalBody.append(movesElement);
     modalBody.append(imageElement);
   }
-
   //enabling search function for navbar
-
   searchInput.addEventListener('input', function(){
-    let allPokemon = document.querySelectorAll('.button');
+    let allPokemon = document.querySelectorAll('.pokemon');
     let filterValue = searchInput.value.toUpperCase();
     
-    allPokemon.forEach(function(item){
+   allPokemon.forEach(function(item){
         console.log(item.innerText);
         if(item.innerText.toUpperCase().indexOf(filterValue) > -1){
             item.style.display = '';
@@ -151,7 +148,6 @@ let pokemonRepository = (function () {
         }
     })
 });
-
 
   //return everything asked for
   return {

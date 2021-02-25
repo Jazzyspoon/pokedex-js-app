@@ -136,7 +136,7 @@ let pokemonRepository = (function () {
   }
   //enabling search function for navbar
   searchInput.addEventListener('input', function(){
-    let allPokemon = document.querySelectorAll('.pokemon');
+    let allPokemon = document.querySelectorAll('button');
     let filterValue = searchInput.value.toUpperCase();
     
    allPokemon.forEach(function(item){

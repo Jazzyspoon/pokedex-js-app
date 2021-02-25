@@ -1,8 +1,6 @@
 body {
   font-family: "Oxygen", sans-serif;
-  /* background-color: var(--primary-color); */
   background: #022a99;
-  width: 100%;
 }
 
 :root {
@@ -14,7 +12,6 @@ body {
   --secondary-color-button: #679ebe;
   --blue: rgb(0, 0, 71);
   --box-shadow-lightest: 0 0 20px rgba(0, 0, 0, 0.15);
-  --box-shadow-contact: 10px 10px 40px -14px #000;
   --box-shadow-dark: 0 0 40px -10px #000;
 }
 
@@ -46,26 +43,9 @@ body {
   border-radius: 15px;
 }
 
-.dex-logo {
-  flex-shrink: 100%;
-  height: 70px;
-}
-
-#searchbar {
-  padding: 15px;
-  border-radius: 10px;
-}
-
-input[type="text"] {
-  width: 70%;
-  -webkit-transition: width 0.15s ease-in-out;
-  transition: width 0.15s ease-in-out;
-}
-
-.buttons {
-  display: list-item;
-}
-
 .backtotop {
   text-align: right;
+  font-size: 18px;
+  text-decoration: underline;
+  font-weight: 700;
 }

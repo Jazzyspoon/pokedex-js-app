@@ -1,7 +1,8 @@
 body {
   font-family: "Oxygen", sans-serif;
-  background-color: var(--primary-color);
-  background: #a8ad59;
+  /* background-color: var(--primary-color); */
+  background: #285df0;
+  width: 100%;
 }
 
 :root {
@@ -44,8 +45,6 @@ body {
   text-align: center;
   font-weight: 700;
   border-radius: 15px;
-  
-  
 }
 
 .dex-logo {
@@ -66,4 +65,8 @@ input[type="text"] {
 
 .buttons {
   display: list-item;
+}
+
+.backtotop {
+  text-align: right;
 }

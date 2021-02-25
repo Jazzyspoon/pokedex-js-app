@@ -1,5 +1,6 @@
 //IIFE instantiated
 let pokemonRepository = (function () {
+  let searchInput = document.querySelector('.search')
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 
@@ -24,6 +25,7 @@ let pokemonRepository = (function () {
     let button = document.createElement("button");
     button.innerText = pokemon.name;
     button.classList.add("list-group-item");
+    // listItem.classList.add('pokemon');
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
     //adding event to list pokemon name in Modal function when clicked?
@@ -136,19 +138,20 @@ let pokemonRepository = (function () {
 
   //enabling search function for navbar
 
-  function searchpokemon() {
-    let input = document.getElementById("#searchbar").value;
-    input = input.toLowerCase();
-    let x = document.getElementsByClassName("li");
+  searchInput.addEventListener('input', function(){
+    let allPokemon = document.querySelectorAll('.button');
+    let filterValue = searchInput.value.toUpperCase();
+    
+    allPokemon.forEach(function(item){
+        console.log(item.innerText);
+        if(item.innerText.toUpperCase().indexOf(filterValue) > -1){
+            item.style.display = '';
+        }else{
+            item.style.display = 'none';
+        }
+    })
+});
 
-    for (i = 0; i < x.length; i++) {
-      if (!x[i].innerHTML.toLowerCase().includes(input)) {
-        x[i].style.display = "none";
-      } else {
-        return showModal(pokemon);
-      }
-    }
-  }
 
   //return everything asked for
   return {

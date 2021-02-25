@@ -4,9 +4,13 @@
         "browser": true
     },
     "extends": [
-        "eslint:recommended"
+        "eslint:recommended",
+        "some-other-config-you-use",
+      "prettier"
     ],
     "rules": {
         "quotes": ["error", "single"]
     }
-}
+
+ 
+  }

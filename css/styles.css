@@ -1,7 +1,7 @@
 body {
   font-family: "Oxygen", sans-serif;
   /* background-color: var(--primary-color); */
-  background: #285df0;
+  background: #022a99;
   width: 100%;
 }
 
@@ -12,7 +12,7 @@ body {
   --black: black;
   --white: #ffffff;
   --secondary-color-button: #679ebe;
-  --blue: blue;
+  --blue: rgb(0, 0, 71);
   --box-shadow-lightest: 0 0 20px rgba(0, 0, 0, 0.15);
   --box-shadow-contact: 10px 10px 40px -14px #000;
   --box-shadow-dark: 0 0 40px -10px #000;
@@ -26,17 +26,16 @@ body {
   border-bottom-left-radius: 10px;
 }
 
-.buttons {
+.list-group-item {
   width: 100%;
-  height: 50px;
   font-weight: 700;
   font-size: 20px;
   text-transform: capitalize;
   position: relative;
   z-index: 0;
-  background: #84ffef;
+  background: #62f7e3;
   box-shadow: 0px 2px 4px rgba(34, 40, 46, 0.75);
-  border-radius: 10px;
+  border-radius: 15px;
   border-width: 5px;
 }
 

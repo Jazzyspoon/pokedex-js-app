@@ -1,7 +1,7 @@
 //IIFE instantiated
 let pokemonRepository = (function () {
   let pokemonList = [];
-  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=100";
+  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 
   //add pokemon from pokemonList
   function add(pokemon) {
@@ -23,7 +23,7 @@ let pokemonRepository = (function () {
     let listPokemon = document.createElement("li");
     let button = document.createElement("button");
     button.innerText = pokemon.name;
-    button.classList.add("buttons");
+    button.classList.add("list-group-item");
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
     //adding event to list pokemon name in Modal function when clicked?
@@ -80,8 +80,7 @@ let pokemonRepository = (function () {
       showModal(item);
     });
   }
-  //modal creation
-  // let modalContainer = document.querySelector("#modal-container");
+
   //show the modal
   function showModal(pokemon) {
     let modalBody = $(".modal-body");

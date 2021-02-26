@@ -1,7 +1,6 @@
 body {
   font-family: "Oxygen", sans-serif;
   background: #022a99;
-  
 }
 
 :root {
@@ -24,6 +23,9 @@ body {
   background: #022a99;
 }
 
+li {
+  border-radius: 15px;
+}
 .header {
   width: 100%;
   background: #f0ff21;
@@ -36,6 +38,7 @@ body {
   width: 100%;
   border-radius: 15px;
   margin: 0px;
+  text-decoration: #022a99 ;
   font-weight: 700;
   font-size: 28px;
   text-transform: capitalize;
@@ -45,7 +48,6 @@ body {
   box-shadow: 0px 2px 4px rgba(33, 51, 70, 0.75);
   border-width: 6px;
   padding: 10px;
-
 }
 
 .modal_character {
@@ -53,7 +55,7 @@ body {
   text-align: center;
   font-weight: 700;
   border-radius: 15px;
- }
+}
 
 .backtotop {
   text-align: center;
@@ -62,7 +64,7 @@ body {
   font-weight: 700;
 }
 
-footer{
+footer {
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -70,9 +72,9 @@ footer{
   min-height: 80px;
   background-color: inherit;
   border-top: 2px solid #212529;
-}  
+}
 
-.modal-content  {
- max-width: 300px;
- max-height: auto; 
+.modal-content {
+  max-width: 300px;
+  max-height: auto;
 }

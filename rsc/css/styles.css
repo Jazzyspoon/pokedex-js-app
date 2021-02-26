@@ -27,10 +27,10 @@ body {
   border-bottom-left-radius: 10px;
 }
 
-.li {
+.btn {
   width: 100%;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 28px;
   text-transform: capitalize;
   position: relative;
   z-index: 0;

@@ -16,7 +16,7 @@ body {
 }
 
 .header-space {
-  height: 120px;
+  height: 130px;
 }
 
 .header {
@@ -36,7 +36,9 @@ body {
   z-index: 0;
   background: #62f7e3;
   box-shadow: 0px 2px 4px rgba(34, 40, 46, 0.75);
-  border-width: 5px;
+  border-width: 12px;
+  margin: 1px;
+  border-radius: 15px;
 }
 
 .modal_character {
@@ -63,3 +65,7 @@ footer{
   border-top: 2px solid #212529;
 }  
 
+.img {
+  size: auto;
+  padding: 10px;
+}

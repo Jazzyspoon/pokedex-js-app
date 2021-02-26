@@ -66,7 +66,7 @@ let pokemonRepository = (function () {
         })
         //add details
         .then(function (details) {
-          item.imageUrl = details.sprites.front_default;
+          item.imageUrl = details.sprites.other.dream_world.front_default;
           item.height = details.height;
           item.weight = details.weight;
           item.abilities = details.abilities;

@@ -126,6 +126,7 @@ let pokemonRepository = (function () {
     let imageElement = document.createElement("img");
     imageElement.src = pokemon.imageUrl;
     imageElement.innerHTML = imageElement.src;
+   
 
     //load modal with requested information from pokemonRepository
     modalTitle.append(titleElement);

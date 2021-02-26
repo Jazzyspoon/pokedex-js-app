@@ -46,7 +46,7 @@ body {
   text-align: center;
   font-weight: 700;
   border-radius: 15px;
-}
+ }
 
 .backtotop {
   text-align: center;
@@ -65,7 +65,6 @@ footer{
   border-top: 2px solid #212529;
 }  
 
-.img {
-  size: auto;
-  padding: 10px;
+.modal-content  {
+  width: auto;
 }

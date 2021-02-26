@@ -27,8 +27,8 @@ let pokemonRepository = (function () {
     // listPokemon.classList.add("list-group-item");
     button.classList.add("btn-primary");
     button.classList.add("pokemon-list"); 
-    $("modal").button('toggle');
-    $("#pokemonModal").button('target');
+    $("modal").button("toggle");
+    $("#pokemonModal").button("target");
            
     // listItem.classList.add('pokemon');
     listPokemon.appendChild(button);

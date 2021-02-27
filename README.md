@@ -1,7 +1,5 @@
 # PokeDex-App
-a javascript exercise done in Career Foundry's Web Dev program.
-This is a mobile-first 'Pokedex', which lists 150 pokemon with details and image from the pokedex API.
-
+This app was created in 2021 by Colorado-based developer, Jason Pottorff, in the Career Foundry Web-Developer school program. The object was to create a simple, mobile-based application using HTML, CSS, Javascript, Bootstrap, JQuery, and a Pokemon API (hosted by CF)
 ...
 Objective: To build a small web application with HTML, CSS, and JavaScript that loads
 data from an external API and enables the viewing of data points in detail.

@@ -53,7 +53,7 @@ let pokemonRepository = (function () {
         console.error(e);
       });
   }
- //loading specific details from API url
+  //loading specific details from API url
   function loadDetails(item) {
     let url = item.detailsUrl;
     return (

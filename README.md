@@ -1,4 +1,4 @@
-# simple-js-app
+# PokeDex-App
 a javascript exercise done in Career Foundry's Web Dev program.
 This is a mobile-first 'Pokedex', which lists 150 pokemon with details and image from the pokedex API.
 

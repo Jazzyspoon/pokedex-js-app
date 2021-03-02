@@ -3,18 +3,19 @@ let pokemonRepository = (function () {
   let searchInput = document.querySelector(".search");
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=151";
+ 
   //add pokemon from pokemonList
   function add(pokemon) {
     if (typeof pokemon === "object" && "name" in pokemon) {
       pokemonList.push(pokemon);
-    } else {
-      console.log("pokemon is not correct");
     }
   }
+
   //get all requested info from pokemonList
   function getAll() {
     return pokemonList;
   }
+
   //add information loaded from API
   function addListItem(pokemon) {
     let pokemonList = document.querySelector(".pokemon-list");
@@ -33,6 +34,7 @@ let pokemonRepository = (function () {
       showDetails(pokemon);
     });
   }
+
   //loading from API
   function loadList() {
     return fetch(apiUrl)
@@ -46,13 +48,10 @@ let pokemonRepository = (function () {
             detailsUrl: item.url,
           };
           add(pokemon);
-          console.log(pokemon);
         });
-      })
-      .catch(function (e) {
-        console.error(e);
       });
   }
+
   //loading specific details from API url
   function loadDetails(item) {
     let url = item.detailsUrl;
@@ -61,7 +60,8 @@ let pokemonRepository = (function () {
         .then(function (response) {
           return response.json();
         })
-        //add details
+
+  //add details
         .then(function (details) {
           item.imageUrl = details.sprites.other.dream_world.front_default;
           item.height = details.height;
@@ -70,11 +70,10 @@ let pokemonRepository = (function () {
           item.types = details.types;
           item.moves = details.moves;
         })
-        .catch(function (e) {
-          console.error(e);
-        })
     );
   }
+
+  //show details from the repository in the modal
   function showDetails(item) {
     pokemonRepository.loadDetails(item).then(function () {
       showModal(item);
@@ -87,36 +86,43 @@ let pokemonRepository = (function () {
     let modalHeader = $(".modal-header");
     modalTitle.empty();
     modalBody.empty();
+
     //defining the name element in the modal
     let titleElement = document.createElement("h1");
     titleElement.innerText = pokemon.name;
+
     //listing the hieght and wieght in the modal
     let heightElement = document.createElement("p");
     heightElement.innerText = "Height: " + pokemon.height;
     let weightElement = document.createElement("p");
     weightElement.innerText = "Weight: " + pokemon.weight;
+    
     //run through abilities array
     let abilityElement = document.createElement("p");
     for (let i = 1; i < pokemon.abilities.length; i++) {
       abilityList = pokemon.abilities[i].ability.name;
     }
     abilityElement.innerText = "Abilities: " + abilityList;
+    
     //listing the types array
     let typesElement = document.createElement("p");
     for (let i = 0; i < pokemon.types.length; i++) {
       typesList = pokemon.types[i].type.name;
     }
     typesElement.innerText = "Type: " + typesList;
+
     //loading moves button
     let movesElement = document.createElement("p");
     for (let i = 0; i < pokemon.types.length; i++) {
       movesList = pokemon.moves[i].move.name;
     }
     movesElement.innerText = "Move: " + movesList;
+
     //loading the image from the API
     let imageElement = document.createElement("img");
     imageElement.src = pokemon.imageUrl;
     imageElement.innerHTML = imageElement.src;
+
     //load modal with requested information from pokemonRepository
     modalTitle.append(titleElement);
     modalBody.append(heightElement);
@@ -126,12 +132,12 @@ let pokemonRepository = (function () {
     modalBody.append(movesElement);
     modalBody.append(imageElement);
   }
+
   //enabling search function for navbar
   searchInput.addEventListener("input", function () {
     let allPokemon = document.querySelectorAll(".btn-primary");
     let filterValue = searchInput.value.toUpperCase();
     allPokemon.forEach(function (item) {
-      console.log(item.innerText);
       if (item.innerText.toUpperCase().indexOf(filterValue) > -1) {
         item.style.display = "";
       } else {
@@ -139,6 +145,7 @@ let pokemonRepository = (function () {
       }
     });
   });
+
   //return everything asked for
   return {
     add: add,
@@ -149,6 +156,7 @@ let pokemonRepository = (function () {
     showDetails: showDetails,
   };
 })();
+
 //call on all items from repository to show on DOM
 pokemonRepository.loadList().then(function () {
   pokemonRepository.getAll().forEach(function (pokemon) {

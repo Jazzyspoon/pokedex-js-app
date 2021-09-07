@@ -3,7 +3,7 @@ let pokemonRepository = (function () {
   let searchInput = document.querySelector(".search");
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=151";
- 
+
   //add pokemon from pokemonList
   function add(pokemon) {
     if (typeof pokemon === "object" && "name" in pokemon) {
@@ -61,7 +61,7 @@ let pokemonRepository = (function () {
           return response.json();
         })
 
-  //add details
+        //add details
         .then(function (details) {
           item.imageUrl = details.sprites.other.dream_world.front_default;
           item.height = details.height;
@@ -91,19 +91,19 @@ let pokemonRepository = (function () {
     let titleElement = document.createElement("h1");
     titleElement.innerText = pokemon.name;
 
-    //listing the hieght and wieght in the modal
+    //listing the height and weight in the modal
     let heightElement = document.createElement("p");
     heightElement.innerText = "Height: " + pokemon.height;
     let weightElement = document.createElement("p");
     weightElement.innerText = "Weight: " + pokemon.weight;
-    
+
     //run through abilities array
     let abilityElement = document.createElement("p");
     for (let i = 1; i < pokemon.abilities.length; i++) {
       abilityList = pokemon.abilities[i].ability.name;
     }
     abilityElement.innerText = "Abilities: " + abilityList;
-    
+
     //listing the types array
     let typesElement = document.createElement("p");
     for (let i = 0; i < pokemon.types.length; i++) {

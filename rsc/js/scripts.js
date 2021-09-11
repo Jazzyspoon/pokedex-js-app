@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable quotes */
 //IIFE instantiated
 let pokemonRepository = (function () {
   let searchInput = document.querySelector(".search");
@@ -81,8 +83,10 @@ let pokemonRepository = (function () {
   }
   //show the modal
   function showModal(pokemon) {
+    // eslint-disable-next-line no-undef
     let modalBody = $(".modal-body");
     let modalTitle = $(".modal-title");
+    // eslint-disable-next-line no-unused-vars
     let modalHeader = $(".modal-header");
     modalTitle.empty();
     modalBody.empty();
@@ -161,7 +165,5 @@ let pokemonRepository = (function () {
 pokemonRepository.loadList().then(function () {
   pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
-    {
-    }
   });
 });
